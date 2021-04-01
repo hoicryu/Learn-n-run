@@ -1,6 +1,11 @@
 import React from "react";
+import MainRank from "./MainRank/MainRank";
 
 function Main(props) {
-  return <div>호익스 가즈아!</div>;
+  return (
+    <div>
+      <MainRank />
+    </div>
+  );
 }
 export default Main;
