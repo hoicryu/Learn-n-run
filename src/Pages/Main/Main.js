@@ -16,7 +16,10 @@ const MainArea = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: green;
+
+  @media screen and (max-width: 400px) {
+    align-items: center;
+  }
 `;
 
 export default Main;
