@@ -29,7 +29,6 @@ function MainRank(props) {
     setWomanRankers(womanRankers);
   };
 
-  const MainRankWrapper = true ? MainRankWrapper1 : MainRankWrapper2;
   return (
     <MainRankWrapper>
       <h1>Run In Ranking</h1>
@@ -37,10 +36,11 @@ function MainRank(props) {
         <RankerWrapper>
           <div>
             <h2>1위</h2>
-            <img src="/images/man.png" alt="topRanker" width="300rem"></img>
+
+            <img src="/images/man.png" alt="topRanker" />
             <TopRankerInfo>
               <p>{manTopRankers?.name}</p>
-              <p>{manTopRankers?.distance}km</p>
+              <p>{manTopRankers?.distance} km</p>
               <p>
                 {manTopRankers.pace?.min}:{manTopRankers.pace?.second} min/km
               </p>
@@ -62,7 +62,7 @@ function MainRank(props) {
         <RankerWrapper>
           <div>
             <h2>1위</h2>
-            <img src="/images/man.png" alt="topRanker" width="300rem"></img>
+            <img src="/images/man.png" alt="topRanker" />
             <TopRankerInfo>
               <p>{womanTopRankers?.name}</p>
               <p>{womanTopRankers?.distance} km</p>
@@ -90,17 +90,18 @@ function MainRank(props) {
   );
 }
 
-const MainRankWrapper1 = styled.div`
+const MainRankWrapper = styled.div`
   padding: 5rem;
-  background-color: red;
+
   h1 {
     padding: 1rem;
     text-align: center;
     font-size: 2.5rem;
+
+    @media screen and (max-width: 400px) {
+      font-size: 1.2rem;
+    }
   }
-`;
-const MainRankWrapper2 = styled.div`
-  background-color: blue;
 `;
 
 const RankerArea = styled.div`
@@ -111,22 +112,34 @@ const RankerWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: blue;
-
-  h1 {
-  }
 
   p {
     padding: 0.3rem;
     text-align: center;
-    font-size: 1.3rem;
-    background-color: violet;
+    font-size: 1.7rem;
+    @media screen and (max-width: 780px) {
+      font-size: 1rem;
+    }
   }
 
   h2 {
     padding: 1rem 0rem 1rem 0rem;
     text-align: center;
     font-size: 2rem;
+    @media screen and (max-width: 400px) {
+      font-size: 1rem;
+    }
+  }
+
+  img {
+    width: 30rem;
+
+    @media screen and (max-width: 780px) {
+      width: 15rem;
+    }
+    @media screen and (max-width: 400px) {
+      width: 10rem;
+    }
   }
 `;
 
@@ -136,13 +149,16 @@ const TopRankerInfo = styled.div`
 
 const RankerBox = styled.article`
   display: flex;
-  width: 100%;
-  background-color: pink;
-  border: 1px solid;
+  width: 600px;
 
   span {
+    width: 25%;
     padding: 0.5rem;
-    margin-left: 10px;
+    font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 780px) {
+    display: none;
   }
 `;
 
