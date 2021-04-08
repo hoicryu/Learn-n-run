@@ -5,9 +5,9 @@ import styled from "styled-components";
 function MainRank(props) {
   const [manTopRankers, setManTopRankers] = useState({});
   const [womanTopRankers, setWomanTopRankers] = useState({});
-
   const [mansrankers, setManRankers] = useState([]);
   const [womanrankers, setWomanRankers] = useState([]);
+
   useEffect(() => {
     getRankData();
   }, []);
@@ -62,7 +62,7 @@ function MainRank(props) {
         <RankerWrapper>
           <div>
             <h2>1위</h2>
-            <img src="/images/man.png" alt="topRanker" />
+            <img src="/images/woman.png" alt="topRanker" />
             <TopRankerInfo>
               <p>{womanTopRankers?.name}</p>
               <p>{womanTopRankers?.distance} km</p>
@@ -99,7 +99,7 @@ const MainRankWrapper = styled.div`
     font-size: 2.5rem;
 
     @media screen and (max-width: 400px) {
-      font-size: 1.2rem;
+      font-size: 10rem;
     }
   }
 `;
