@@ -5,21 +5,24 @@ import Nav from "./Nav/Nav";
 import styled from "styled-components";
 
 function Main(props) {
+  console.log("kiyeol");
   return (
-    <MainArea>
+    <MainWrapper>
       <MainRank />
       <Nav />
-    </MainArea>
+    </MainWrapper>
   );
 }
 
-const MainArea = styled.div`
-  display: flex;
-  justify-content: space-around;
+const MainWrapper = styled.div`
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 `;
