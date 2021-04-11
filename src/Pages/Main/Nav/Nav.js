@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 function Nav(props) {
   const [navData, setNavData] = useState([
-    { id: 0, menu: "login" },
-    { id: 1, menu: "myPage" },
-    { id: 2, menu: "aboutCrew" },
-    { id: 3, menu: "members" },
-    { id: 4, menu: "ranking" },
+    { id: 0, menu: "forum" },
+    { id: 1, menu: "login" },
+    { id: 2, menu: "myPage" },
+    { id: 3, menu: "ranking" },
+    { id: 4, menu: "members" },
     { id: 5, menu: "story" },
-    { id: 6, menu: "forum" },
+    { id: 6, menu: "aboutCrew" },
   ]);
 
   const [translateX, setTranslateX] = useState(0);

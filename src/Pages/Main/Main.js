@@ -1,14 +1,16 @@
 import React from "react";
+
 import MainRank from "./MainRank/MainRank";
+import Signup from "./Signup/Signup";
 import Nav from "./Nav/Nav";
 
 import styled from "styled-components";
 
 function Main(props) {
-  console.log("kiyeol");
   return (
     <MainWrapper>
-      <MainRank />
+      <Signup />
+      {/* <MainRank /> */}
       <Nav />
     </MainWrapper>
   );
