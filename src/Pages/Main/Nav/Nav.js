@@ -49,8 +49,8 @@ function Nav(props) {
         {navData.length &&
           navData.map((navData, idx) => {
             return (
-              <NavBox className="slide_box">
-                <NavMenu id={idx} key={navData.id} onClick={sortMenu}>
+              <NavBox className="slide_box" key={navData.id}>
+                <NavMenu id={idx} onClick={sortMenu}>
                   {navData.menu}
                 </NavMenu>
               </NavBox>
