@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-function Button({ buttonName, runFunction }) {
+function Button({ buttonName, color, runFunction }) {
   return (
     <ButtonBox>
       <button onClick={runFunction}>{buttonName}</button>
@@ -15,6 +15,7 @@ const ButtonBox = styled.div`
   justify-content: center;
 
   button {
+    margin: 0.2em;
     padding: 0.5em;
     font-size: 1em;
     border: 1px solid #ebebeb;
