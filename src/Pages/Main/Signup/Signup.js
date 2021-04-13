@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import InputBox from "../../../Components/InputBox";
 import Button from "../../../Components/Button";
@@ -6,6 +6,38 @@ import Button from "../../../Components/Button";
 import styled from "styled-components";
 
 function Signup(props) {
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState({});
+  const [confirmPw, setConfirmPw] = useState({});
+  const [birth, setBirth] = useState({});
+  const [gender, setGender] = useState({});
+  const [email, setEmail] = useState({});
+  const [group, setGroup] = useState({});
+
+  const setupInputValue = (e) => {
+    if (e.target.name === "id") {
+      setId(e.target.value);
+    }
+    if (e.target.name === "pw") {
+      setPw(e.target.value);
+    }
+    if (e.target.name === "confirmPw") {
+      setConfirmPw(e.target.value);
+    }
+    if (e.target.name === "birth") {
+      setBirth(e.target.value);
+    }
+    if (e.target.name === "gender") {
+      setGender(e.target.value);
+    }
+    if (e.target.name === "email") {
+      setEmail(e.target.value);
+    }
+    if (e.target.name === "group") {
+      setGroup(e.target.value);
+    }
+  };
+
   return (
     <SignupWrapper>
       <h1>회원가입</h1>
@@ -13,54 +45,71 @@ function Signup(props) {
       <InputArea>
         <InputBtnBox>
           <InputBox
-            inputName="아이디입력"
+            Name="아이디입력"
+            inputName="id"
             inputType="text"
             inputBlankLabel="필수정보 입니다"
             inputFailedLabel="6자 이상의 영문, 소문자, 숫자, 공백을 제외한 특수기호만 사용이 가능합니다"
             inputOverlapLabel="이미 사용중인 아이디입니다"
             inputSuccessLabel="사용가능한 아이디입니다"
+            setupInputValue={setupInputValue}
           />
           <ButtonWrapper>
             <Button buttonName="중복검사" />
           </ButtonWrapper>
         </InputBtnBox>
         <InputBox
-          inputName="비밀번호"
+          Name="비밀번호"
+          inputName="pw"
           inputType="text"
           inputBlankLabel="필수정보 입니다"
           inputFailedLabel="8~16자 영문 대 소문자, 숫자, 특수문자 중 사용해주세요"
+          setupInputValue={setupInputValue}
         />
         <InputBox
-          inputName="비밀번호 재확인"
+          Name="비밀번호 재확인"
+          inputName="confirmPw"
           inputType="text"
           inputBlankLabel="필수정보 입니다"
           inputFailedLabel="비밀번호가 일치하지 않습니다"
           inputSuccessLabel="비밀번호가 일치합니다"
+          setupInputValue={setupInputValue}
         />
         <InputBox
-          inputName="생년월일"
+          Name="생년월일"
+          inputName="birth"
           inputType="date"
           inputBlankLabel="필수정보 입니다"
+          setupInputValue={setupInputValue}
         />
         <InputBox
-          inputName="성별"
-          inputType="tex"
+          Name="성별"
+          inputName="gender"
+          inputType="text"
           inputBlankLabel="필수정보 입니다"
+          setupInputValue={setupInputValue}
         />
         <InputBtnBox>
           <InputBox
-            inputName="이메일 / 본인인증"
+            Name="이메일 / 본인인증"
+            inputName="email"
             inputType="email"
             inputBlankLabel="필수정보 입니다"
             inputFailedLabel="이메일형식이 맞지 않습니다"
             inputSuccessLabel="이메일 인증을 완료했습니다"
+            setupInputValue={setupInputValue}
           />
           <ButtonWrapper>
             <Button buttonName="인증번호 받기" />
             <Button buttonName="인증하기" />
           </ButtonWrapper>
         </InputBtnBox>
-        <InputBox inputName="위코드 기수" InputType="text" />
+        <InputBox
+          Name="위코드 기수"
+          inputName="group"
+          InputType="text"
+          setupInputValue={setupInputValue}
+        />
         <ButtonWrapper>
           <Button buttonName="가입하기" />
         </ButtonWrapper>
@@ -73,9 +122,8 @@ const SignupWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 65%;
+  width: 65vw;
   margin-left: 8%;
-  background-color: pink;
 
   @media screen and (max-width: 780px) {
     width: 90%;
@@ -88,7 +136,7 @@ const SignupWrapper = styled.div`
   }
 
   h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 1em;
     @media screen and (max-width: 780px) {
       font-size: 2em;
@@ -101,7 +149,7 @@ const SignupWrapper = styled.div`
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 1rem;
 
     @media screen and (max-width: 780px) {
@@ -132,9 +180,9 @@ const ButtonWrapper = styled.div`
   padding: 1.3rem 1.3rem 1.3rem 0;
 
   button {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     @media screen and (max-width: 780px) {
-      margin-left: 0.7rem;
+      margin-left: 0.4rem;
     }
 
     @media screen and (max-width: 400px) {
