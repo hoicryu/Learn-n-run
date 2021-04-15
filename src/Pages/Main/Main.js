@@ -10,8 +10,8 @@ import styled from "styled-components";
 function Main(props) {
   return (
     <MainWrapper>
-      <Signin />
-      {/* <Signup /> */}
+      {/* <Signin /> */}
+      <Signup />
       {/* <MainRank /> */}
       <Nav />
     </MainWrapper>

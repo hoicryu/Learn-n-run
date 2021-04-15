@@ -105,7 +105,7 @@ const MainRankWrapper = styled.div`
   h1 {
     padding: 1rem;
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2rem;
 
     @media screen and (max-width: 780px) {
       font-size: 1.5rem;
@@ -156,7 +156,7 @@ const RankerWrapper = styled.section`
       width: 10em;
     }
     @media screen and (max-width: 400px) {
-      width: 18em;
+      width: 6em;
     }
   }
 `;

@@ -69,7 +69,7 @@ const InputWrapper = styled.div`
       font-size: 1em;
       border: 1px solid #ebebeb;
       border-radius: 10px;
-      background-color: ffffff;
+      background-color: white;
 
       @media screen and (max-width: 780px) {
         padding: 0.3em;
