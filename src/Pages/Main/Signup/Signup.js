@@ -2,17 +2,18 @@ import React, { useState } from "react";
 
 import InputBox from "../../../Components/InputBox";
 import Button from "../../../Components/Button";
+import SelectBox from "../../../Components/SelectBox";
 
 import styled from "styled-components";
 
 function Signup(props) {
-  const [id, setId] = useState("");
+  const [id, setId] = useState({});
   const [pw, setPw] = useState({});
   const [confirmPw, setConfirmPw] = useState({});
   const [birth, setBirth] = useState({});
   const [gender, setGender] = useState({});
   const [email, setEmail] = useState({});
-  const [group, setGroup] = useState({});
+  const [userName, setUserName] = useState({});
 
   const setupInputValue = (e) => {
     if (e.target.name === "id") {
@@ -33,8 +34,8 @@ function Signup(props) {
     if (e.target.name === "email") {
       setEmail(e.target.value);
     }
-    if (e.target.name === "group") {
-      setGroup(e.target.value);
+    if (e.target.name === "userName") {
+      setUserName(e.target.value);
     }
   };
 
@@ -76,19 +77,25 @@ function Signup(props) {
           setupInputValue={setupInputValue}
         />
         <InputBox
+          Name="이름 (닉네임)"
+          inputName="userName"
+          InputType="text"
+          setupInputValue={setupInputValue}
+        />
+        <InputBox
           Name="생년월일"
           inputName="birth"
           inputType="date"
           inputBlankLabel="필수정보 입니다"
           setupInputValue={setupInputValue}
         />
-        <InputBox
+        <SelectBox
           Name="성별"
-          inputName="gender"
-          inputType="text"
+          selectName="gender"
+          optionList={["선택", "남자", "여자"]}
+          setupSelectedOption={setupInputValue}
           inputBlankLabel="필수정보 입니다"
-          setupInputValue={setupInputValue}
-        />
+        ></SelectBox>
         <InputBtnBox>
           <InputBox
             Name="이메일 / 본인인증"
@@ -104,12 +111,7 @@ function Signup(props) {
             <Button buttonName="인증하기" />
           </ButtonWrapper>
         </InputBtnBox>
-        <InputBox
-          Name="위코드 기수"
-          inputName="group"
-          InputType="text"
-          setupInputValue={setupInputValue}
-        />
+
         <ButtonWrapper>
           <Button buttonName="가입하기" />
         </ButtonWrapper>
@@ -139,11 +141,11 @@ const SignupWrapper = styled.div`
     font-size: 2em;
     margin-bottom: 1em;
     @media screen and (max-width: 780px) {
-      font-size: 2em;
+      font-size: 1.5em;
       margin-bottom: 0.8em;
     }
     @media screen and (max-width: 400px) {
-      font-size: 1.4em;
+      font-size: 1em;
       margin-bottom: 0.6em;
     }
   }
