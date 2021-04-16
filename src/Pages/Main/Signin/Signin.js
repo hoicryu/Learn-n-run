@@ -17,6 +17,9 @@ function Signin(props) {
       setPw(e.target.value);
     }
   };
+  const haha = () => {
+    console.log("haha");
+  };
 
   return (
     <SigninWrapper>
@@ -35,13 +38,13 @@ function Signin(props) {
         <ButtonWrapper>
           <Button buttonName="Login" />
         </ButtonWrapper>
-        <ButtonWrapper>
-          <Button buttonName="Login" color="kakao" />
-          <Button buttonName="Login" color="naver" />
-        </ButtonWrapper>
+        <KakaoLogin
+          src="/images/kakaoLogin.png"
+          alt="kakao"
+          onClick={haha}
+        ></KakaoLogin>
       </InputBtnWrapper>
       <LinksWrapper>
-        <p>아이디 찾기</p>
         <p>비밀번호 찾기</p>
         <p>회원가입</p>
       </LinksWrapper>
@@ -53,9 +56,11 @@ const SigninWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   width: 65vw;
   margin-left: 8%;
-  background-color: red;
+  border-radius: 10px;
+  background-color: #a5c8c5;
 
   @media screen and (max-width: 780px) {
     width: 90%;
@@ -68,8 +73,10 @@ const SigninWrapper = styled.div`
   }
 
   h1 {
+    width: 80%;
     font-size: 2em;
-    margin-bottom: 1em;
+    padding: 0.5em 0 0.5em 2em;
+
     @media screen and (max-width: 780px) {
       font-size: 1.5em;
       margin-bottom: 0.8em;
@@ -86,19 +93,21 @@ const InputBtnWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: green;
+  width: 80%;
+  margin: 0 auto 0 auto;
+  color: black;
+  background-color: white;
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: 1.3rem 1.3rem 1.3rem 0;
+  padding: 1.3rem;
   @media screen and (max-width: 780px) {
-    padding: 1rem 1rem 1rem 0;
+    padding: 1rem;
   }
   @media screen and (max-width: 400px) {
-    padding: 0.7rem 0.7rem 0.7rem 0;
+    padding: 0.7rem;
   }
 `;
 
@@ -107,6 +116,7 @@ const LinksWrapper = styled.div`
   justify-content: space-around;
   margin-top: 2em;
   font-size: 1em;
+  padding-bottom: 2em;
   @media screen and (max-width: 780px) {
     font-size: 0.7em;
     margin-bottom: 0.8em;
@@ -114,6 +124,17 @@ const LinksWrapper = styled.div`
   @media screen and (max-width: 400px) {
     font-size: 0.4em;
     margin-bottom: 0.6em;
+  }
+`;
+
+const KakaoLogin = styled.img`
+  cursor: pointer;
+  padding: 1.3rem;
+  @media screen and (max-width: 780px) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: 400px) {
+    padding: 0.7rem;
   }
 `;
 

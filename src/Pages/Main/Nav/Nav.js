@@ -65,10 +65,11 @@ const NavArea = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 5%;
+  padding-right: 5%;
   width: 35%;
   height: 100vh;
   overflow-y: hidden;
+  color: white;
 
   @media screen and (max-width: 780px) {
     width: 100%;

@@ -8,7 +8,7 @@ function SelectBox({ setupSelectedOption, optionList, Name, selectName }) {
       <p>{Name}</p>
       <select onChange={setupSelectedOption} name={selectName}>
         {optionList.map((el, idx) => {
-          return <option>{el}</option>;
+          return <option key={idx}>{el}</option>;
         })}
       </select>
     </SelectWrapper>

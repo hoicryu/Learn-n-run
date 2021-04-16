@@ -5,11 +5,12 @@ import Signup from "./Signup/Signup";
 import Signin from "./Signin/Signin";
 import Nav from "./Nav/Nav";
 
+import theme from "../../Styles/theme";
 import styled from "styled-components";
 
-function Main(props) {
+function Main() {
   return (
-    <MainWrapper>
+    <MainWrapper theme={theme}>
       {/* <Signin /> */}
       <Signup />
       {/* <MainRank /> */}
@@ -23,7 +24,9 @@ const MainWrapper = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-
+  background-color: ${(props) => props.theme.mainBack};
+  transition: 1s;
+  color: white;
   @media screen and (max-width: 780px) {
     flex-direction: column;
     justify-content: center;

@@ -1,26 +1,23 @@
-import styled from "styled-components";
+const theme = {
+  kakao: "#F9E000",
+  naver: "#03C75A",
+  mainBack: "#1C202E",
+  mainPoint: "#A5C8C5",
+  page1Back: "82368C",
+  page1Point: "3cdddd",
+  page2Back: "f82600",
+  page2Point: "5ffb04",
+  page3Back: "fbff00",
+  page3Point: "0400ff",
+  page4Back: "ff4365",
+  page4Point: "43ffdd",
+  page5Back: "fcccad0",
+  page5Point: "b28c5a",
 
-const common = {
-  flexCenter: `
-    display: flex;
-    justify-contents: center;
-    align-items: center;
-  `,
+  page6Back: "41fca3",
+  page6Point: "be23b7",
+  page7Back: "32c3ff",
+  page7Point: "ff6be32",
 };
 
-export const TitleArea = styled.div`
-  font-size: 2rem;
-  font-weight: bold;
-  color: #252e3f;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-`;
-export const ContentArea = styled.div`
-  width: 100%;
-`;
-
-const e = {
-  common,
-};
-
-export default e;
+export default theme;
