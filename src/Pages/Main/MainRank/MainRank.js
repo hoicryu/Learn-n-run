@@ -5,9 +5,9 @@ import styled from "styled-components";
 function MainRank(props) {
   const [manTopRankers, setManTopRankers] = useState({});
   const [womanTopRankers, setWomanTopRankers] = useState({});
-
   const [mansrankers, setManRankers] = useState([]);
   const [womanrankers, setWomanRankers] = useState([]);
+
   useEffect(() => {
     getRankData();
   }, []);
@@ -62,7 +62,7 @@ function MainRank(props) {
         <RankerWrapper>
           <div>
             <h2>1위</h2>
-            <img src="/images/man.png" alt="topRanker" />
+            <img src="/images/woman.png" alt="topRanker" />
             <TopRankerInfo>
               <p>{womanTopRankers?.name}</p>
               <p>{womanTopRankers?.distance} km</p>
@@ -91,15 +91,28 @@ function MainRank(props) {
 }
 
 const MainRankWrapper = styled.div`
-  padding: 5rem;
+  width: 65%;
+  margin-left: 3%;
+  @media screen and (max-width: 780px) {
+    width: 100%;
+    margin-left: 0;
+  }
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   h1 {
     padding: 1rem;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
+
+    @media screen and (max-width: 780px) {
+      font-size: 1.5rem;
+    }
 
     @media screen and (max-width: 400px) {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -116,29 +129,34 @@ const RankerWrapper = styled.section`
   p {
     padding: 0.3rem;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     @media screen and (max-width: 780px) {
       font-size: 1rem;
     }
   }
 
   h2 {
-    padding: 1rem 0rem 1rem 0rem;
+    padding: 2rem 0rem 2rem 0rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8em;
+
+    @media screen and (max-width: 780px) {
+      font-size: 1.3rem;
+    }
+
     @media screen and (max-width: 400px) {
       font-size: 1rem;
     }
   }
 
   img {
-    width: 30rem;
+    width: 13em;
 
     @media screen and (max-width: 780px) {
-      width: 15rem;
+      width: 10em;
     }
     @media screen and (max-width: 400px) {
-      width: 10rem;
+      width: 6em;
     }
   }
 `;
@@ -149,12 +167,22 @@ const TopRankerInfo = styled.div`
 
 const RankerBox = styled.article`
   display: flex;
-  width: 600px;
+  width: 20em;
+  margin-right: 5%;
 
   span {
-    width: 25%;
-    padding: 0.5rem;
-    font-size: 1.2rem;
+    width: 23%;
+    padding: 0.3em;
+    font-size: 0.8em;
+    &:nth-child(1) {
+      text-align: end;
+    }
+    &:nth-child(2) {
+      text-align: center;
+    }
+    &:last-child {
+      width: 31%;
+    }
   }
 
   @media screen and (max-width: 780px) {

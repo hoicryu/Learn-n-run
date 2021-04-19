@@ -1,26 +1,22 @@
-import styled from "styled-components";
-
-const common = {
-  flexCenter: `
-    display: flex;
-    justify-contents: center;
-    align-items: center;
-  `,
+const theme = {
+  KAKAO_COLOR: "#F9E000",
+  NAVEAR_COLOR: "#03C75A",
+  MAIN_BACK_COLOR: "#1C202E",
+  MAIN_POINT_COLOR: "#A5C8C5",
+  PAGE1_BACK_COLOR: "82368C",
+  PAGE1_POINT_COLOR: "3cdddd",
+  PAGE2_BACK_COLOR: "f82600",
+  PAGE2_POINT_COLOR: "5ffb04",
+  PAGE3_BACK_COLOR: "fbff00",
+  PAGE3_POINT_COLOR: "0400ff",
+  PAGE4_BACK_COLOR: "ff4365",
+  PAGE4_POINT_COLOR: "43ffdd",
+  PAGE5_BACK_COLOR: "fcccad0",
+  PAGE5_POINT_COLOR: "b28c5a",
+  PAGE6_BACK_COLOR: "41fca3",
+  PAGE6_POINT_COLOR: "be23b7",
+  PAGE7_BACK_COLOR: "32c3ff",
+  PAGE7_POINT_COLOR: "ff6be32",
 };
 
-export const TitleArea = styled.div`
-  font-size: 2rem;
-  font-weight: bold;
-  color: #252e3f;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-`;
-export const ContentArea = styled.div`
-  width: 100%;
-`;
-
-const e = {
-  common,
-};
-
-export default e;
+export default theme;
