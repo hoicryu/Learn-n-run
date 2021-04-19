@@ -3,6 +3,15 @@ import React, { useState } from "react";
 import InputBox from "../../../Components/InputBox";
 import Button from "../../../Components/Button";
 
+import KaKaoLogin from "react-kakao-login";
+
+import {
+  KAKAO_REST_API_KEY,
+  KAKAO_AUTHORIZE_API,
+  MY_TEST_SERVER,
+  LNR_SERVER,
+} from "../../../Config";
+
 import styled from "styled-components";
 
 function Signin(props) {
@@ -17,8 +26,14 @@ function Signin(props) {
       setPw(e.target.value);
     }
   };
-  const haha = () => {
-    console.log("haha");
+  const getKakaoAuthentication = () => {
+    // window.Kakao.init("b84109b5c63ef41abbae6d43127c9352");
+    fetch(
+      `${KAKAO_AUTHORIZE_API}?client_id=${KAKAO_REST_API_KEY}&redirect_uri=http://localhost:3000/kakao/login&response_type=code`,
+      { method: "GET", mode: "no-cors" }
+    )
+      // .then((res) => res.json())
+      .then((res) => console.log(res));
   };
 
   return (
@@ -38,11 +53,13 @@ function Signin(props) {
         <ButtonWrapper>
           <Button buttonName="Login" />
         </ButtonWrapper>
-        <KakaoLogin
+        <KaKaoBtn
           src="/images/kakaoLogin.png"
           alt="kakao"
-          onClick={haha}
-        ></KakaoLogin>
+          onClick={getKakaoAuthentication}
+          jskey="b84109b5c63ef41abbae6d43127c9352"
+          getProfile={true}
+        ></KaKaoBtn>
       </InputBtnWrapper>
       <LinksWrapper>
         <p>비밀번호 찾기</p>

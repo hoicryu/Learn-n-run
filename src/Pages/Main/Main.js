@@ -11,8 +11,8 @@ import styled from "styled-components";
 function Main() {
   return (
     <MainWrapper theme={theme}>
-      {/* <Signin /> */}
-      <Signup />
+      <Signin />
+      {/* <Signup /> */}
       {/* <MainRank /> */}
       <Nav />
     </MainWrapper>
@@ -24,7 +24,7 @@ const MainWrapper = styled.div`
   height: 100vh;
   display: flex;
   align-items: center;
-  background-color: ${(props) => props.theme.mainBack};
+  background-color: ${(props) => props.theme.MAIN_BACK_COLOR};
   transition: 1s;
   color: white;
   @media screen and (max-width: 780px) {
