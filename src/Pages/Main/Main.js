@@ -3,15 +3,17 @@ import React from "react";
 import MainRank from "./MainRank/MainRank";
 import Signup from "./Signup/Signup";
 import Signin from "./Signin/Signin";
+import RunningRecord from "../RunningRecord/RunningRecord";
 import Nav from "./Nav/Nav";
 
-import theme from "../../Styles/theme";
+import theme from "../../Styles/Theme";
 import styled from "styled-components";
 
 function Main() {
   return (
     <MainWrapper theme={theme}>
-      <Signin />
+      <RunningRecord />
+      {/* <Signin /> */}
       {/* <Signup /> */}
       {/* <MainRank /> */}
       <Nav />
