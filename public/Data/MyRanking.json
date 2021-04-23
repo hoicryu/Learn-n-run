@@ -1,0 +1,117 @@
+{
+  "mans": [
+    {
+      "rank": 1,
+      "id": "1",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864593.svg?token=exp=1617098941~hmac=9e3134419479f8d0ef9f6edad0dd404a",
+      "name": "호익",
+      "distance": 34.532,
+      "pace": {
+        "min": 6,
+        "second": 30
+      }
+    },
+    {
+      "rank": 2,
+      "id": "2",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864593.svg?token=exp=1617098941~hmac=9e3134419479f8d0ef9f6edad0dd404a",
+      "name": "건희",
+      "distance": 33.532,
+      "pace": {
+        "min": 7,
+        "second": 30
+      }
+    },
+    {
+      "rank": 3,
+      "id": "3",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864593.svg?token=exp=1617098941~hmac=9e3134419479f8d0ef9f6edad0dd404a",
+      "name": "철현",
+      "distance": 32.532,
+      "pace": {
+        "min": 8,
+        "second": 30
+      }
+    },
+    {
+      "rank": 4,
+      "id": "4",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864593.svg?token=exp=1617098941~hmac=9e3134419479f8d0ef9f6edad0dd404a",
+      "name": "재형",
+      "distance": 31.532,
+      "pace": {
+        "min": 9,
+        "second": 30
+      }
+    },
+    {
+      "rank": 5,
+      "id": "5",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864593.svg?token=exp=1617098941~hmac=9e3134419479f8d0ef9f6edad0dd404a",
+      "name": "현우",
+      "distance": 30.532,
+      "pace": {
+        "min": 10,
+        "second": 30
+      }
+    }
+  ],
+
+  "womans": [
+    {
+      "rank": 1,
+      "id": "1",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864609.svg?token=exp=1617101846~hmac=e82caf2660972111321b2a6c348d2c09",
+      "name": "희원",
+      "distance": 34.532,
+      "pace": {
+        "min": 6,
+        "second": 30
+      }
+    },
+    {
+      "rank": 2,
+      "id": "2",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864609.svg?token=exp=1617101846~hmac=e82caf2660972111321b2a6c348d2c09",
+      "name": "지혜",
+      "distance": 33.532,
+      "pace": {
+        "min": 7,
+        "second": 30
+      }
+    },
+    {
+      "rank": 3,
+      "id": "3",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864609.svg?token=exp=1617101846~hmac=e82caf2660972111321b2a6c348d2c09",
+      "name": "서경",
+      "distance": 32.532,
+      "pace": {
+        "min": 8,
+        "second": 30
+      }
+    },
+    {
+      "rank": 4,
+      "id": "4",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864609.svg?token=exp=1617101846~hmac=e82caf2660972111321b2a6c348d2c09",
+      "name": "지현",
+      "distance": 31.532,
+      "pace": {
+        "min": 9,
+        "second": 30
+      }
+    },
+    {
+      "rank": 5,
+      "id": "5",
+      "img": "https://www.flaticon.com/svg/vstatic/svg/1864/1864609.svg?token=exp=1617101846~hmac=e82caf2660972111321b2a6c348d2c09",
+      "name": "유라",
+      "distance": 30.532,
+      "pace": {
+        "min": 10,
+        "second": 30
+      }
+    }
+  ]
+}

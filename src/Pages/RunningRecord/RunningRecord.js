@@ -18,18 +18,27 @@ function RunningRecord(props) {
 
   return (
     <RunningRecordWrapper>
-      <RecordInput Name="이름" />
-      <RecordInput Name="거리" />
-      <RecordInput Name="페이스" />
-      <RecordInput Name="케이던스" />
+      <RecordInputWrapper>
+        <RecordInput Name="이름" />
+        <RecordInput Name="거리" />
+        <RecordInput Name="페이스" />
+        <RecordInput Name="케이던스" />
+      </RecordInputWrapper>
+      <Button buttonName="등록" />
     </RunningRecordWrapper>
   );
 }
 
 const RunningRecordWrapper = styled.div`
   display: flex;
-  width: 65vw;
-  margin-left: 8%;
+  /* width: 65vw; */
+  /* margin-left: 8%; */
+  /* width: 500em; */
+  /* background-color: red; */
+`;
+
+const RecordInputWrapper = styled.div`
+  display: flex;
 `;
 
 export default RunningRecord;
