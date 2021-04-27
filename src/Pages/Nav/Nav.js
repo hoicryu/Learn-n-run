@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import theme from "../../Styles/Theme"
 
 function Nav(props) {
   const [navData, setNavData] = useState([
@@ -66,16 +67,17 @@ const NavArea = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding-right: 5%;
-  width: 35%;
-  height: 100vh;
+  width: 30%;
   overflow-y: hidden;
+  z-index: 1;
   color: white;
+  background-color: ${(props) => props.theme.MAIN_BACK_COLOR};
 
   @media screen and (max-width: 780px) {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 25%;
     justify-content: center;
-    align-items: center;
+    padding-right: 0;
     overflow-x: hidden;
     margin-right: 0%;
   }
@@ -87,13 +89,10 @@ const NavWrapper = styled.div`
   justify-content: center;
   align-items: flex-end;
   height: 140%;
-  .go {
-    transform: translateY(30px) 2s;
-  }
 
   @media screen and (max-width: 780px) {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
   }
 `;
@@ -103,7 +102,7 @@ const NavBox = styled.div`
   justify-content: center;
   align-items: center;
   height: 20%;
-  font-size: 3rem;
+  font-size: 2.8rem;
 
   @media screen and (max-width: 780px) {
     font-size: 1.5rem;
@@ -120,7 +119,7 @@ const NavBox = styled.div`
   }
 
   :nth-child(4) {
-    font-size: 4rem;
+    font-size: 3.7rem;
     transition: 1s;
 
     @media screen and (max-width: 780px) {
