@@ -12,8 +12,8 @@ function Main() {
   return (
     <MainWrapper theme={theme}>
       {/* <RunningRecord /> */}
-      {/* <Signin /> */}
-      <Signup />
+      <Signin />
+      {/* <Signup /> */}
       {/* <MainRank /> */}
     </MainWrapper>
   );

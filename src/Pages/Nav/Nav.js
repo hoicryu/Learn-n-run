@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import theme from "../../Styles/Theme"
 
 function Nav(props) {
   const [navData, setNavData] = useState([
@@ -70,7 +71,7 @@ const NavArea = styled.div`
   overflow-y: hidden;
   z-index: 1;
   color: white;
-  background-color: blue;
+  background-color: ${(props) => props.theme.MAIN_BACK_COLOR};
 
   @media screen and (max-width: 780px) {
     width: auto;
