@@ -39,10 +39,20 @@ const InputWrapper = styled.div`
 
   @media screen and (max-width: 400px) {
     padding: 0.6em;
+    width:4.5em;
   }
 
   label {
     margin-bottom: 0.5em;
+    font-size:1em;
+
+    @media screen and (max-width: 780px) {
+    font-size: 0.8em;
+  }
+
+    @media screen and (max-width: 400px) {
+    padding: 0.2em;
+  }
   }
 
   input {
@@ -59,7 +69,7 @@ const InputWrapper = styled.div`
     }
 
     @media screen and (max-width: 400px) {
-      padding: 0.1em;
+      padding: 0.2em;
       font-size: 0.5em;
     }
   }

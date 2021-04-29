@@ -24,6 +24,7 @@ function Signin(props) {
   const [id, setId] = useState({});
   const [pw, setPw] = useState({});
   const [inKakaoLogin, setKakaoInLogin] = useState(false);
+  const [inLogin, setInLogin] = useState(false);
 
   const setupInputValue = (e) => {
     if (e.target.name === "id") {
@@ -115,6 +116,7 @@ function Signin(props) {
         "등록돠지 않은 아이디이거나 \n아이디 또는 비밀번호를 잘못 입력하셨습니다."
       );
     }
+    setInLogin(true)
   };
 
   return (
@@ -131,19 +133,26 @@ function Signin(props) {
           inputName="pw"
           setupInputValue={setupInputValue}
         ></InputBox>
-        <ButtonWrapper>
-          <Button buttonName="Login" runFunction={postLoginValue} />
-        </ButtonWrapper>
+        {inLogin ?
+          <ButtonWrapper>
+            <Button buttonName="Logout" runFunction={setInLogin(false)} />
+          </ButtonWrapper>
+          :
+          <ButtonWrapper>
+            <Button buttonName="Login" runFunction={postLoginValue} />
+          </ButtonWrapper>
+        }
         <KakaoLoginBtn
           src="/images/kakaoLogin.png"
           alt="kakao"
           onClick={getKakaoAuthentication}
         ></KakaoLoginBtn>
-        <button onClick={logoutKakao}>로그아웃</button>
       </InputBtnWrapper>
       <LinksWrapper>
         <p>비밀번호 찾기</p>
-        <p>회원가입</p>
+        <Link to="/signup">
+          <p>회원가입</p>
+        </Link>
       </LinksWrapper>
     </SigninWrapper>
   );
@@ -153,34 +162,33 @@ const SigninWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  width: 65vw;
-  margin-left: 8%;
+  align-items:center;
+  width: 50em;
   border-radius: 10px;
   background-color: #a5c8c5;
 
   @media screen and (max-width: 780px) {
-    width: 90%;
-    padding: 5%;
-    margin-left: 0;
+    width: 30em;
+    padding: 3px;
+    
   }
 
   @media screen and (max-width: 400px) {
-    padding: 3%;
+    width: 20em;
+    padding: 2px;
   }
 
   h1 {
-    width: 80%;
+    padding: 0.6rem 0 0.6rem 0;
     font-size: 2em;
-    padding: 0.5em 0 0.5em 2em;
-
+    
     @media screen and (max-width: 780px) {
       font-size: 1.5em;
-      margin-bottom: 0.8em;
+      
     }
     @media screen and (max-width: 400px) {
       font-size: 1em;
-      margin-bottom: 0.6em;
+      
     }
   }
 `;
@@ -190,8 +198,7 @@ const InputBtnWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin: 0 auto 0 auto;
+  width: 90%;
   color: black;
   background-color: white;
 `;
@@ -211,9 +218,12 @@ const ButtonWrapper = styled.div`
 const LinksWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-top: 2em;
+  padding: 0.6rem 0 0.6rem 0;
+  width: 30%;
   font-size: 1em;
-  padding-bottom: 2em;
+  
+  
+  
   @media screen and (max-width: 780px) {
     font-size: 0.7em;
     margin-bottom: 0.8em;

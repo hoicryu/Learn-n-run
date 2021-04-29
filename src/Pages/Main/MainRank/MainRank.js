@@ -36,7 +36,6 @@ function MainRank(props) {
         <RankerWrapper>
           <div>
             <h2>1위</h2>
-
             <img src="/images/man.png" alt="topRanker" />
             <TopRankerInfo>
               <p>{manTopRankers?.name}</p>
@@ -91,12 +90,7 @@ function MainRank(props) {
 }
 
 const MainRankWrapper = styled.div`
-  width: 65%;
-  margin-left: 3%;
-  @media screen and (max-width: 780px) {
-    width: 100%;
-    margin-left: 0;
-  }
+  
   display: flex;
   justify-content: center;
   flex-direction: column;
