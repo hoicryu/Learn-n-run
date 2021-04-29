@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import Main from "./Pages/Main/Main";
 import Nav from "./Pages/Nav/Nav";
+import SignupWrapper from "./Pages/Main/SignupWrapper"
 
 import styled from "styled-components";
 import theme from "./Styles/Theme";
@@ -15,6 +16,7 @@ function Routes(props) {
         <Container>
           <Switch>
             <Route exact path="/" component={Main} />
+            <Route exact path="/signup" component={SignupWrapper} />
           </Switch>
           <Nav />
         </Container>

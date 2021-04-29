@@ -14,11 +14,12 @@ function RunningRecord(props) {
   const [pace, setPace] = useState({});
   const [cadence, setCadence] = useState({});
 
-  const setupInputValue = (e) => {};
+  const setupInputValue = (e) => { };
 
   return (
     <RunningRecordWrapper>
       <RecordInputWrapper>
+        <RecordInput Name="날짜" inputType="date" />
         <RecordInput Name="이름" />
         <RecordInput Name="거리" />
         <RecordInput Name="페이스" />
@@ -31,10 +32,25 @@ function RunningRecord(props) {
 
 const RunningRecordWrapper = styled.div`
   display: flex;
-  /* width: 65vw; */
-  /* margin-left: 8%; */
-  /* width: 500em; */
-  /* background-color: red; */
+  justify-content:center;
+  align-items: flex-end;
+  width: 50em;
+  flex-wrap:wrap;
+
+  @media screen and (max-width: 780px) {
+    width: 30em;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  @media screen and (max-width: 400px) {
+    
+    width: 23em;
+  }
+
+  Button{
+    margin-bottom: 0.8em;
+  }
 `;
 
 const RecordInputWrapper = styled.div`

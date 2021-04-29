@@ -39,8 +39,10 @@ function Signup(props) {
     }
   };
 
+
+
   return (
-    <SignupWrapper>
+    <SignupBox>
       <h1>회원가입</h1>
       <h2>정보입력</h2>
       <InputArea>
@@ -86,7 +88,7 @@ function Signup(props) {
           Name="생년월일"
           inputName="birth"
           inputType="date"
-          inputBlankLabel="필수정보 입니다"
+          inputBlankLabel="필수정보입니다"
           setupInputValue={setupInputValue}
         />
         <SelectBox
@@ -116,11 +118,11 @@ function Signup(props) {
           <Button buttonName="가입하기" />
         </ButtonWrapper>
       </InputArea>
-    </SignupWrapper>
+    </SignupBox>
   );
 }
 
-const SignupWrapper = styled.div`
+const SignupBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

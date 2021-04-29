@@ -1,23 +1,21 @@
 import React from "react";
 
-import MainRank from "./MainRank/MainRank";
-import Signin from "./Signin/Signin";
-import RunningRecord from "../RunningRecord/RunningRecord";
+
+import Signup from "./Signup/Signup";
+
 
 import theme from "../../Styles/Theme";
 import styled from "styled-components";
 
-function Main() {
+function SignupWrapper() {
   return (
-    <MainWrapper theme={theme}>
-      <RunningRecord />
-      {/* <Signin /> */}
-      {/* <MainRank /> */}
-    </MainWrapper>
+    <SignupArea theme={theme}>
+      <Signup />
+    </SignupArea>
   );
 }
 
-const MainWrapper = styled.div`
+const SignupArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,4 +29,4 @@ const MainWrapper = styled.div`
   }
 `;
 
-export default Main;
+export default SignupWrapper;
