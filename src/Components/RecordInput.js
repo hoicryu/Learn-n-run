@@ -21,7 +21,7 @@ function RecordInput({
         onChange={setupInputValue}
         type={inputType}
         placeholder={inputPlaceHolder}
-        name={inputName}
+        name={Name}
       ></input>
     </InputWrapper>
   );

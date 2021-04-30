@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "date": "2021-04-22",
+      "name": "건희",
+      "distance": 4.5,
+      "pace": 4.30,
+      "cadence": 100
+    },
+    {
+      "date": "2021-03-24",
+      "name": "건희",
+      "distance": 4.5,
+      "pace": 4.30,
+      "cadence": 100
+    },
+    {
+      "date": "2021-01-02",
+      "name": "건희",
+      "distance": 4.5,
+      "pace": 4.30,
+      "cadence": 100
+    },
+    {
+      "date": "2021-04-22",
+      "name": "건희",
+      "distance": 4.5,
+      "pace": 4.30,
+      "cadence": 100
+    },
+    {
+      "date": "2021-04-22",
+      "name": "건희",
+      "distance": 4.5,
+      "pace": 4.30,
+      "cadence": 100
+    },
+    {
+      "date": "2021-04-22",
+      "name": "건희",
+      "distance": 4.5,
+      "pace": 4.30,
+      "cadence": 100
+    }
+  ]
+}
