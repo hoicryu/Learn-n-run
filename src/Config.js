@@ -10,6 +10,7 @@ export const LNR_SERVER = "http://192.168.50.65:8000";
 export const LOGIN_API = `${LNR_SERVER}/user/auth`;
 export const SIGNUP_API = `${LNR_SERVER}/user`;
 export const POST_KAKAO_API = `${LNR_SERVER}/user/social/kakao-token`;
+export const POST_NEWRECORD_API = `${LNR_SERVER}/record/creat`;
 
 // my local SERVER
 export const MY_TEST_SERVER = "http://192.168.50.72:3000";
