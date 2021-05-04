@@ -1,8 +1,10 @@
 import React from "react";
 
+import SmallButton from "../Components/SmallButton"
+
 import styled from "styled-components";
 
-function InputBox({
+function SmallInputBox({
   Name,
   inputName,
   inputType,
@@ -16,7 +18,7 @@ function InputBox({
   disabled,
 }) {
   return (
-    <InputWrapper>
+    <SmallInputWrapper>
       <p>{Name}</p>
       <div>
         <input
@@ -29,29 +31,29 @@ function InputBox({
         ></input>
         <label></label>
       </div>
-    </InputWrapper>
+    </SmallInputWrapper>
   );
 }
 
-const InputWrapper = styled.div`
+const SmallInputWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1.2rem 1.2rem 1.2rem 0;
-  width: 25rem;
+  width: 20rem;
+  background-color:red;
 
   @media screen and (max-width: 780px) {
-    width: 15rem;
+    width: 10rem;
     padding: 0.8rem 0.8rem 0.8rem 0;
   }
 
   @media screen and (max-width: 400px) {
-    width: 10rem;
+    width: 8rem;
     padding: 0.6rem 0.6rem 0.6rem 0;
   }
   p {
     width: 40%;
-    font-size: 1em;
+    font-size: 0.8em;
 
     @media screen and (max-width: 780px) {
       font-size: 0.8em;
@@ -63,13 +65,12 @@ const InputWrapper = styled.div`
 
   div {
     display: flex;
-    width: 60%;
+    width: 50%;
 
     input {
-      width: 100%;
       padding: 0.5em;
-      margin-left: 2rem;
-      font-size: 1em;
+      margin-left: 0.8rem;
+      font-size: 0.8em;
       border: 1px solid #ebebeb;
       border-radius: 10px;
       background-color: white;
@@ -92,4 +93,4 @@ const InputWrapper = styled.div`
   }
 `;
 
-export default InputBox;
+export default SmallInputBox;

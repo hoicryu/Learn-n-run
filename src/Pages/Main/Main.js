@@ -3,6 +3,7 @@ import React from "react";
 import MainRank from "./MainRank/MainRank";
 import Signin from "./Signin/Signin";
 import RunningRecord from "../RunningRecord/RunningRecord";
+import MyPage from "./MyPage/MyPage"
 
 import theme from "../../Styles/Theme";
 import styled from "styled-components";
@@ -10,9 +11,10 @@ import styled from "styled-components";
 function Main() {
   return (
     <MainWrapper theme={theme}>
-      <RunningRecord />
-      {/* <Signin /> */}
-      {/* <MainRank /> */}
+      <MyPage />
+      {/* <RunningRecord /> */}
+      {/* <Signin />
+      <MainRank /> */}
     </MainWrapper>
   );
 }

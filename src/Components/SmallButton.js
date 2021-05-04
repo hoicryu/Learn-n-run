@@ -2,24 +2,24 @@ import React from "react";
 
 import styled from "styled-components";
 
-function Button({ buttonName, name, runFunction }) {
+function SmallButton({ buttonName, name, runFunction }) {
   return (
-    <ButtonWrapper>
-      <ColorButton name={name} onClick={runFunction} width="100">
+    <SmallButtonWrapper>
+      <button name={name} onClick={runFunction} width="100">
         {buttonName}
-      </ColorButton>
-    </ButtonWrapper>
+      </button>
+    </SmallButtonWrapper>
   );
 }
 
-const ButtonWrapper = styled.div`
+const SmallButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 
   button {
     margin: 0.2em;
-    padding: 0.7em;
-    font-size: 1em;
+    padding: 0.5em;
+    font-size: 0.8em;
     border: 1px solid #ebebeb;
     border-radius: 10px;
 
@@ -35,8 +35,6 @@ const ButtonWrapper = styled.div`
   }
 `;
 
-const ColorButton = styled.button`
-  background: ${(props) => (props.name === "kakao" ? "yellow" : "white")};
-`;
 
-export default Button;
+
+export default SmallButton;
