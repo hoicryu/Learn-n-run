@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-function InputBox({
+function SmallInputBox({
   Name,
   inputName,
   inputType,
@@ -16,7 +16,7 @@ function InputBox({
   disabled,
 }) {
   return (
-    <InputWrapper>
+    <SmallInputWrapper>
       <p>{Name}</p>
       <div>
         <input
@@ -29,16 +29,16 @@ function InputBox({
         ></input>
         <label></label>
       </div>
-    </InputWrapper>
+    </SmallInputWrapper>
   );
 }
 
-const InputWrapper = styled.div`
+const SmallInputWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1.2rem 1.2rem 1.2rem 0;
-  width: 25rem;
+  width: 20rem;
+  
 
   @media screen and (max-width: 780px) {
     width: 15rem;
@@ -51,10 +51,10 @@ const InputWrapper = styled.div`
   }
   p {
     width: 40%;
-    font-size: 1em;
+    font-size: 0.8em;
 
     @media screen and (max-width: 780px) {
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
     @media screen and (max-width: 400px) {
       font-size: 0.6em;
@@ -63,20 +63,20 @@ const InputWrapper = styled.div`
 
   div {
     display: flex;
-    width: 60%;
+    width: 50%;
 
     input {
-      width: 100%;
+      width:100%;
       padding: 0.5em;
-      margin-left: 2rem;
-      font-size: 1em;
+      margin-left: 0.8rem;
+      font-size: 0.8em;
       border: 1px solid #ebebeb;
       border-radius: 10px;
       background-color: white;
 
       @media screen and (max-width: 780px) {
         padding: 0.3em;
-        margin-left: 1.5rem;
+        margin-left: 0.6rem;
         font-size: 0.8em;
       }
 
@@ -92,4 +92,4 @@ const InputWrapper = styled.div`
   }
 `;
 
-export default InputBox;
+export default SmallInputBox;

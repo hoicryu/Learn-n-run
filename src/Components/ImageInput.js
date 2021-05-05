@@ -2,43 +2,34 @@ import React from "react";
 
 import styled from "styled-components";
 
-function InputBox({
+function ImageInput({
   Name,
   inputName,
   inputType,
   inputValue,
-  inputPlaceHolder,
-  inputBlankLabel,
-  inputFailedLabel,
-  inputOverlapLabel,
-  inputSuccessLabel,
   setupInputValue,
-  disabled,
 }) {
   return (
-    <InputWrapper>
+    <ImageInputWrapper>
       <p>{Name}</p>
       <div>
         <input
           onChange={setupInputValue}
-          type={inputType}
-          placeholder={inputPlaceHolder}
+          type="file"
           name={inputName}
-          disabled={disabled}
           value={inputValue}
         ></input>
-        <label></label>
       </div>
-    </InputWrapper>
+    </ImageInputWrapper>
   );
 }
 
-const InputWrapper = styled.div`
+const ImageInputWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 1.2rem 1.2rem 1.2rem 0;
-  width: 25rem;
+  width: 20rem;
+  
 
   @media screen and (max-width: 780px) {
     width: 15rem;
@@ -51,10 +42,10 @@ const InputWrapper = styled.div`
   }
   p {
     width: 40%;
-    font-size: 1em;
+    font-size: 0.8em;
 
     @media screen and (max-width: 780px) {
-      font-size: 0.8em;
+      font-size: 0.7em;
     }
     @media screen and (max-width: 400px) {
       font-size: 0.6em;
@@ -63,20 +54,18 @@ const InputWrapper = styled.div`
 
   div {
     display: flex;
-    width: 60%;
+    width: 50%;
 
     input {
-      width: 100%;
-      padding: 0.5em;
-      margin-left: 2rem;
-      font-size: 1em;
+      width:50%;
+      margin-left: 0.8rem;
+      font-size: 0.8em;
       border: 1px solid #ebebeb;
-      border-radius: 10px;
       background-color: white;
 
       @media screen and (max-width: 780px) {
         padding: 0.3em;
-        margin-left: 1.5rem;
+        margin-left: 0.6rem;
         font-size: 0.8em;
       }
 
@@ -86,10 +75,7 @@ const InputWrapper = styled.div`
         font-size: 0.5em;
       }
     }
-
-    label {
-    }
   }
 `;
 
-export default InputBox;
+export default ImageInput;

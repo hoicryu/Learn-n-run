@@ -4,15 +4,15 @@ import styled from "styled-components";
 
 function Button({ buttonName, name, runFunction }) {
   return (
-    <ButtonBox>
+    <ButtonWrapper>
       <ColorButton name={name} onClick={runFunction} width="100">
         {buttonName}
       </ColorButton>
-    </ButtonBox>
+    </ButtonWrapper>
   );
 }
 
-const ButtonBox = styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
 
