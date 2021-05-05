@@ -4,7 +4,7 @@ import axios from "axios";
 
 import SmallInputBox from "../../../Components/SmallInputBox";
 import SmallButton from "../../../Components/SmallButton";
-import Button from "../../../Components/Button";
+import ImageInput from "../../../Components/ImageInput"
 
 import {
   LNR_SERVER,
@@ -16,19 +16,44 @@ import styled from "styled-components";
 
 function MyPage(props) {
   useEffect(() => {
-
+    getUserPrivacy();
   }, []);
 
-  const [pw, setPw] = useState({});
+  const [userName, setUserName] = useState({
+    "currentPw": "",
+    "newPw": "",
+    "confirmPw": ""
+  });
+
+  const [pw, setPw] = useState({
+    "currentPw": "",
+    "newPw": "",
+    "confirmPw": ""
+  });
+  const [userPrivacy, setUserPrivacy] = useState({
+    "profilePicture": "",
+    "userName": "",
+    "averageRecord": "",
+  });
+
+  const [changePw, setChangePw] = useState(false);
 
   const setupInputValue = (e) => {
-    setPw(e.target.value);
+    const { name, value } = e.target
+    if (name === "currentPw") setPw({ ...pw, currentPw: value })
+    if (name === "newPw") setPw({ ...pw, newPw: value })
+    if (name === "confirmPw") setPw({ ...pw, confirmPw: value })
   };
 
-  const getUserEmail = () => {
+  const getUserPrivacy = () => {
     axios
-      .get()
+      .get(LNR_SERVER)
+      .then((userPrivacy) => setUserPrivacy(userPrivacy))
+      .catch((err) => console.log(err))
+  }
 
+  const onChangePassword = () => {
+    setChangePw(!changePw)
   }
 
   const history = useHistory();
@@ -38,47 +63,57 @@ function MyPage(props) {
     <MyPageWrapper>
       <h1>my page</h1>
       <MyInfoWrapper>
-        <SmallInputBox
-          Name="사진"
-          inputName="picture"
-          setupInputValue={setupInputValue}
-        ></SmallInputBox>
-        <InputBtnBox>
-          <SmallInputBox
-            Name="이름 (닉네임)"
-            inputName="name"
-            setupInputValue={setupInputValue}
-            disabled={true}
-          ></SmallInputBox>
-          <SmallButton Samllname="이름변경" buttonName="변경" />
-        </InputBtnBox>
-        <InputBtnBox>
-          <SmallInputBox
-            Name="비밀번호"
-            inputName="pw"
-            setupInputValue={setupInputValue}
-          ></SmallInputBox>
-          <SmallButton name="pw변경" buttonName="변경" />
-        </InputBtnBox>
-        <SmallInputBox
-          Name="현재 비밀번호"
-          inputName="currentPw"
-          setupInputValue={setupInputValue}
-        ></SmallInputBox>
-        <SmallInputBox
-          Name="새 비밀번호"
-          inputName="newPw"
-          setupInputValue={setupInputValue}
-        ></SmallInputBox>
-        <SmallInputBox
-          Name="다시입력"
-          inputName="confirmPw"
-          setupInputValue={setupInputValue}
-        ></SmallInputBox>
-        <ButtonBox>
-          <Button name="확인" buttonName="확인" />
-          <Button name="취소" buttonName="취소" />
-        </ButtonBox>
+        <div>
+          <ImageInputWrapper>
+            <image src={userPrivacy.profilePicture} alt="사진" />
+            <ImageInput
+              Name="사진"
+              inputName="picture"
+              setupInputValue={setupInputValue}
+            ></ImageInput>
+          </ImageInputWrapper>
+          <InputBtnBox>
+            <SmallInputBox
+              Name="이름 (닉네임)"
+              inputName="name"
+              setupInputValue={setupInputValue}
+              disabled={true}
+            ></SmallInputBox>
+            <SmallButton name="이름변경" buttonName="변경" />
+          </InputBtnBox>
+          <InputBtnBox>
+            <SmallInputBox
+              Name="비밀번호"
+              inputName="pw"
+              inputType="password"
+            ></SmallInputBox>
+            <SmallButton name="pw변경" buttonName="변경" runFunction={onChangePassword} />
+          </InputBtnBox>
+          {changePw && <>
+            <SmallInputBox
+              Name="현재 비밀번호"
+              inputName="currentPw"
+              inputType="password"
+              setupInputValue={setupInputValue}
+            />
+            <SmallInputBox
+              Name="새 비밀번호"
+              inputName="newPw"
+              inputType="password"
+              setupInputValue={setupInputValue}
+            />
+            <SmallInputBox
+              Name="다시입력"
+              inputName="confirmPw"
+              inputType="password"
+              setupInputValue={setupInputValue}
+            /></>}
+          <MyRecord>
+            <p>나의 기록</p>
+            <span>123 km</span>
+            <span>5:30 min/km</span>
+          </MyRecord>
+        </div>
       </MyInfoWrapper>
     </MyPageWrapper>
   );
@@ -135,9 +170,43 @@ const InputBtnBox = styled.div`
   align-items: center;
 `;
 
-const ButtonBox = styled.div`
-  display:flex;
-  padding-bottom: 1em;
+const ImageInputWrapper = styled.div`
+
+`;
+
+const MyRecord = styled.div`
+  display: flex;
+  width: 20rem;
+  padding: 1.2rem 1.2rem 2rem 0;
+  font-size: 0.8em;
+
+  @media screen and (max-width: 780px) {
+    width: 15rem;
+    padding: 0.8rem 0.8rem 2rem 0;
+    font-size: 0.7em;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 10rem;
+    padding: 0.6rem 0.6rem 2rem 0;
+    font-size: 0.6em;
+  }
+
+  p{
+    width: 40%
+  }
+  span{
+    margin-left: 0.8rem;
+
+    @media screen and (max-width: 780px) {
+        margin-left: 0.6rem;
+      }
+
+      @media screen and (max-width: 400px) {
+        margin-left: 0.5rem;
+      } 
+  }
+
 `;
 
 

@@ -2,38 +2,29 @@ import React from "react";
 
 import styled from "styled-components";
 
-function SmallInputBox({
+function ImageInput({
   Name,
   inputName,
   inputType,
   inputValue,
-  inputPlaceHolder,
-  inputBlankLabel,
-  inputFailedLabel,
-  inputOverlapLabel,
-  inputSuccessLabel,
   setupInputValue,
-  disabled,
 }) {
   return (
-    <SmallInputWrapper>
+    <ImageInputWrapper>
       <p>{Name}</p>
       <div>
         <input
           onChange={setupInputValue}
-          type={inputType}
-          placeholder={inputPlaceHolder}
+          type="file"
           name={inputName}
-          disabled={disabled}
           value={inputValue}
         ></input>
-        <label></label>
       </div>
-    </SmallInputWrapper>
+    </ImageInputWrapper>
   );
 }
 
-const SmallInputWrapper = styled.div`
+const ImageInputWrapper = styled.div`
   display: flex;
   align-items: center;
   padding: 1.2rem 1.2rem 1.2rem 0;
@@ -66,12 +57,10 @@ const SmallInputWrapper = styled.div`
     width: 50%;
 
     input {
-      width:100%;
-      padding: 0.5em;
+      width:50%;
       margin-left: 0.8rem;
       font-size: 0.8em;
       border: 1px solid #ebebeb;
-      border-radius: 10px;
       background-color: white;
 
       @media screen and (max-width: 780px) {
@@ -86,10 +75,7 @@ const SmallInputWrapper = styled.div`
         font-size: 0.5em;
       }
     }
-
-    label {
-    }
   }
 `;
 
-export default SmallInputBox;
+export default ImageInput;

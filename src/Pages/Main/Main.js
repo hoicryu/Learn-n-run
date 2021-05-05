@@ -13,8 +13,8 @@ function Main() {
     <MainWrapper theme={theme}>
       <MyPage />
       {/* <RunningRecord /> */}
-      {/* <Signin />
-      <MainRank /> */}
+      {/* <Signin /> */}
+      {/* <MainRank /> */}
     </MainWrapper>
   );
 }

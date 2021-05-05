@@ -24,13 +24,13 @@ const SmallButtonWrapper = styled.div`
     border-radius: 10px;
 
     @media screen and (max-width: 780px) {
-      padding: 0.5em;
-      font-size: 0.8em;
+      padding: 0.4em;
+      font-size: 0.7em;
     }
 
     @media screen and (max-width: 400px) {
       padding: 0.3em;
-      font-size: 0.3em;
+      font-size: 0.5em;
     }
   }
 `;
